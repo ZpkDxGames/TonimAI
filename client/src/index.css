@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 220 20% 18%;
+  --foreground: 210 40% 98%;
+  --muted: 220 15% 25%;
+  --muted-foreground: 220 10% 70%;
+  --popover: 220 20% 18%;
+  --popover-foreground: 210 40% 98%;
+  --card: 220 20% 18%;
+  --card-foreground: 210 40% 98%;
+  --border: 220 15% 30%;
+  --input: 220 15% 30%;
+  --primary: 214 60% 50%;
+  --primary-light: 214 65% 60%;
+  --primary-dark: 214 70% 40%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 215 50% 45%;
+  --secondary-light: 215 55% 55%;
+  --secondary-dark: 215 60% 35%;
+  --secondary-foreground: 210 40% 98%;
+  --accent: 220 15% 25%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 70% 50%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 220 15% 30%;
+  --radius: 0.5rem;
+  --neutral-light: 220 20% 18%;
+  --neutral-medium: 220 15% 25%;
+  --neutral-dark: 210 40% 98%;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 215 36% 47%;
+  --primary-light: 213 45% 58%;
+  --primary-dark: 214 39% 37%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 142 47% 50%;
+  --secondary-light: 142 47% 60%;
+  --secondary-dark: 142 47% 40%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-neutral-light text-neutral-dark;
+  }
+  
+  .chat-container {
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+    padding-bottom: 40px;
+    scroll-behavior: smooth;
+  }
+
+  .chat-container::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .chat-container::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  .chat-container::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted));
+    border-radius: 20px;
+  }
+
+  .message-in {
+    position: relative;
+    background: hsl(var(--muted));
+    color: hsl(var(--foreground));
+    border-radius: 18px 18px 18px 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .message-out {
+    position: relative;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border-radius: 18px 18px 4px 18px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .button-option {
+    transition: all 0.2s ease;
+  }
+
+  .button-option:hover {
+    transform: translateY(-2px);
+  }
+
+  .button-option:active {
+    transform: translateY(0);
+  }
+}
